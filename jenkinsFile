@@ -1,0 +1,26 @@
+pipeline {
+    
+    agent any
+    environment {
+        PATH = "/usr/share/maven/bin:$PATH"
+    }
+    stages {
+        stage('CHECKOUT GIT') {
+            
+            steps{
+                echo 'Pulling...';
+                git branch: 'main',
+                url: 'https://github.com/ihebayari1/devops2.git',
+                credentialsId: 'a8572a24-999a-4f77-945d-98786a9a46ea';
+            }
+        }
+        stage('BUILD') {
+            steps{
+                sh 'mvn -f DevopsBackendProject/pom.xml clean install'
+                }
+        }
+
+    }
+    
+    
+}
