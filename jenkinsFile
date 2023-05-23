@@ -11,7 +11,7 @@ pipeline {
                 echo 'Pulling...';
                 git branch: 'main',
                 url: 'https://github.com/ihebayari1/devops2.git',
-                credentialsId: 'a8572a24-999a-4f77-945d-98786a9a46ea';
+                credentialsId: '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';
             }
         }
         stage('BUILD') {
