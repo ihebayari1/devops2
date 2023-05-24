@@ -41,9 +41,9 @@ pipeline {
 				version: '1.0',
 				repository: 'devops_exam-release',
 				artifacts: [
-						[artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
+						[artifactId: 'ExamThourayaS2',
 						classifier: '',
-						file: 'target/ExamThourayaS2-0.0.1-SNAPSHOT.jar',
+						file: 'target/ExamThourayaS2-1.0.jar',
 						type: 'jar']
 						],
 			)
