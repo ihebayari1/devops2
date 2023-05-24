@@ -31,7 +31,7 @@ pipeline {
             }
         }
      stage('Deploy') {
-		steps {
+    steps {
         nexusArtifactUploader(
             nexusVersion: 'nexus3',
             protocol: 'http',
@@ -39,6 +39,7 @@ pipeline {
             groupId: 'com.esprit.examen',
             version: '1.0',
             repository: 'devops_exam-release',
+			credentialsId: 'iheb123',
             artifacts: [
                 [artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
                  classifier: '',
