@@ -39,7 +39,7 @@ pipeline {
 			credentialsId: '32067542-f2d7-4041-a5b5-c71d43a9d3a6',
             groupId: 'com.esprit.examen',
             version: '1.0',
-            repository: 'devops_exam-release/',
+            repository: 'devops_exam-release',
             artifacts: [
                 [artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
                  classifier: '',
