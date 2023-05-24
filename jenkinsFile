@@ -11,7 +11,7 @@ pipeline {
                 echo 'Pulling...';
                 git branch: 'main',
                 url: 'https://github.com/ihebayari1/devops2.git',
-                credentialsId: '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';
+                credentialsId: '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';
             }
         }
         stage('BUILD') {
@@ -19,7 +19,12 @@ pipeline {
                  sh 'mvn clean install'  
                }
         }
-     
+        
+    stage('Sonar') {
+      steps {
+        sh 'mvn sonar:sonar -Dsonar.projectKey=devOps-project -Dsonar.login=squ_2adf672f4800ed632c244ce110d7eb52b5b72e29'
+      }
+    }
 
     }
     
