@@ -43,7 +43,7 @@ pipeline {
 				artifacts: [
 						[artifactId: 'ExamThourayaS2',
 						classifier: '',
-						file: 'target/ExamThourayaS2-1.0.jar',
+						file: 'target/ExamThourayaS2-0.0.1-SNAPSHOT.jar',
 						type: 'jar']
 						],
 			)
