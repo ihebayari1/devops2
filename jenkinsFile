@@ -25,6 +25,28 @@ pipeline {
         sh 'mvn sonar:sonar -Dsonar.projectKey=devOps-project -Dsonar.login=squ_2adf672f4800ed632c244ce110d7eb52b5b72e29'
       }
     }
+	stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+     stage('Deploy') {
+            steps {
+                        nexusArtifactUploader(
+                            nexusVersion: 'nexus3',
+                            protocol: 'http',
+                            nexusUrl: 'localhost:8081/nexus',
+                            groupId: 'com.esprit.examen',
+                            version: '1.0',
+                            repository: 'Examen-Devops',
+                            artifacts: [
+                                [artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
+                                 classifier: '',
+                                 file: 'target/ExamThourayaS2-0.0.1-SNAPSHOT.jar',
+                                 type: 'jar']
+                            ]
+                         )
+            }
 
     }
     
