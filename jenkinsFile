@@ -35,7 +35,7 @@ pipeline {
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
-                            nexusUrl: 'localhost:8081/repository/devops_exam-release/',
+                           nexusUrl: 'http://localhost:8081/repository/devops_exam-release/',
                             groupId: 'com.esprit.examen',
                             version: '1.0',
                             repository: 'devops_exam-release',
