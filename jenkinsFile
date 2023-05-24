@@ -36,10 +36,10 @@ pipeline {
             nexusVersion: 'nexus3',
             protocol: 'http',
             nexusUrl: 'http://localhost:8081/repository/devops_exam-release/',
+			credentialsId: '32067542-f2d7-4041-a5b5-c71d43a9d3a6',
             groupId: 'com.esprit.examen',
             version: '1.0',
             repository: 'devops_exam-release',
-			credentialsId: 'iheb123',
             artifacts: [
                 [artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
                  classifier: '',
