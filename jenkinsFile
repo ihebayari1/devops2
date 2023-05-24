@@ -16,8 +16,10 @@ pipeline {
         }
         stage('BUILD') {
             steps{
-                sh 'mvn -f pom.xml clean install'
-                }
+                withMaven(maven: 'Maven') {
+                      sh 'mvn clean install'
+                    }
+               }
         }
 
     }
